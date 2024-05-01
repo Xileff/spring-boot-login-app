@@ -2,10 +2,11 @@ package com.felix.loginapp.entities.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Data
 public class ResponseBody<T> {
-    private String message;
-    private T data;
+    private final String message;
+    private final T data;
 }
