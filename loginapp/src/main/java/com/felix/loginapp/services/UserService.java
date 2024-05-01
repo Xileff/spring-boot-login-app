@@ -76,12 +76,11 @@ public class UserService {
         }
     }
 
-    public ResponseEntity<ResponseBody> getDashboard() {
+    public ResponseEntity<ResponseBody> getCurrentUser() {
         try {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             String username = auth.getName();
-            String dashboardText = "Welcome, " + username;
-            ResponseBody<String> body = new ResponseBody<>("success", dashboardText);
+            ResponseBody<String> body = new ResponseBody<>("success", username);
             return ResponseEntity.status(HttpStatus.OK).body(body);
         } catch (Exception e) {
             System.out.println("ERROR : " + e.getMessage());

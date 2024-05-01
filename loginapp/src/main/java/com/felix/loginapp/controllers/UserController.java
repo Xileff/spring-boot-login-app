@@ -29,6 +29,6 @@ public class UserController {
 
     @GetMapping("user")
     public ResponseEntity<ResponseBody> dashboard() {
-        return userService.getDashboard();
+        return userService.getCurrentUser();
     }
 }
